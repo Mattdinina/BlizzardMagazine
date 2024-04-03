@@ -11,11 +11,25 @@ const connection = mysql.createConnection({
   database: process.env.DATABASE
 });
 
+
 @Injectable()
 export class UsersService {
-  create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+  async create(createUserDto: CreateUserDto) {
+    const { Pseudo, email, birthdate, password, ProfilePicture } = createUserDto;
+    return new Promise((resolve, reject) => {
+      connection.query('INSERT INTO User (pseudo, email, birthdate, password, profilePicture) VALUES (?, ?, ?, ?, ?)', [Pseudo, email, birthdate, password, ProfilePicture], (error, results, fields) => {
+        if (error) {
+          reject(error);
+        }
+        else {
+          resolve(results);
+        }
+      });
+
+    })
   }
+
+
 
   findAll() {
     return `This action returns all users`;
