@@ -4,7 +4,9 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { config } from 'dotenv';
 import { ConfigModule } from '@nestjs/config';
-// Charge les variables d'environnement à partir du fichier .env
+import { UsersModule } from './users/users.module';
+import { UsersController } from './users/users.controller';
+import { UsersService } from './users/users.service';
 require("dotenv").config();
 
 @Module({
@@ -18,9 +20,10 @@ require("dotenv").config();
       database: process.env.DATABASE,
       entities: [],
       synchronize: true,
-    })]
+    }),
+    UsersModule]
   ,
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, UsersController],
+  providers: [AppService, UsersService],
 })
 export class AppModule { }
