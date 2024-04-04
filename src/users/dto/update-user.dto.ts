@@ -3,6 +3,7 @@ import { CreateUserDto } from './create-user.dto';
 import { IsString, IsDateString, IsOptional } from 'class-validator';
 export class UpdateUserDto extends PartialType(CreateUserDto) {
 
+    [key: string]: any;
     @IsOptional()
     pseudo?: string;
 

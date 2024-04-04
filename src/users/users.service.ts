@@ -32,7 +32,16 @@ export class UsersService {
 
 
   findAll() {
-    return `This action returns all users`;
+    return new Promise((resolve, reject) => {
+      connection.query('SELECT * FROM User', (error, results) => {
+        if (error) {
+          reject(error);
+        }
+        else {
+          resolve(results)
+        }
+      })
+    });
   }
 
   findOne(pseudo: string): Promise<any> {
@@ -47,10 +56,20 @@ export class UsersService {
     });
   }
 
-
-
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(id: number, columnName: string, columnValue: any) {
+    return new Promise((resolve, reject) => {
+      connection.query(
+        `UPDATE User SET ${columnName} = ? WHERE id = ?`,
+        [columnValue, id],
+        (error, results, fields) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(results);
+          }
+        },
+      );
+    });
   }
 
   remove(id: number) {
