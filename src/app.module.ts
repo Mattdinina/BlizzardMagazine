@@ -7,6 +7,7 @@ import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
 import { UsersController } from './users/users.controller';
 import { UsersService } from './users/users.service';
+import { PublicationsModule } from './publications/publications.module';
 require("dotenv").config();
 
 @Module({
@@ -21,7 +22,8 @@ require("dotenv").config();
       entities: [],
       synchronize: true,
     }),
-    UsersModule]
+    UsersModule,
+    PublicationsModule]
   ,
   controllers: [AppController, UsersController],
   providers: [AppService, UsersService],

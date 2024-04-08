@@ -73,6 +73,14 @@ export class UsersService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} user`;
+    return new Promise((resolve, reject) => {
+      connection.query(`DELETE FROM User WHERE id = ${id}`, (error, results, fields) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(results);
+        }
+      });
+    });
   }
 }
