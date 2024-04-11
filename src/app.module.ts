@@ -8,6 +8,7 @@ import { UsersModule } from './users/users.module';
 import { UsersController } from './users/users.controller';
 import { UsersService } from './users/users.service';
 import { PublicationsModule } from './publications/publications.module';
+import { CollectionModule } from './collection/collection.module';
 require("dotenv").config();
 
 @Module({
@@ -23,7 +24,8 @@ require("dotenv").config();
       synchronize: true,
     }),
     UsersModule,
-    PublicationsModule]
+    PublicationsModule,
+    CollectionModule]
   ,
   controllers: [AppController, UsersController],
   providers: [AppService, UsersService],
