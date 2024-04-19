@@ -2,15 +2,18 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from 'react';
 import './index.css';
-// import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Register from "./pages/register";
+import Login from "./pages/login";
 
 export default function Home() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="*" element={<Register />} />
+        <Route path="/" element={<App />} />
+        <Route path="register" element={<Register />} />
+        <Route path="login" element={<Login />} />
       </Routes>
     </BrowserRouter>
 
