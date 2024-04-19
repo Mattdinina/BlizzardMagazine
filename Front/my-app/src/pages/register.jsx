@@ -9,23 +9,21 @@ function Register() {
                     Inscription
                 </legend>
                 <label
-                >Enter your full name</label
-                >
+                >Entrez votre pseudo</label>
                 <input type="text" name="Pseudo" />
-                <label>Enter your email</label>
+                <label>Entrez votre email</label>
                 <input
                     type="email"
                     name="email"
                 />
-                <label>Enter your password</label>
+                <label>Entrez votre mot de passe</label>
                 <input
                     type="password"
                     name="password"
                 />
 
                 <label>
-                    Enter your Date of
-                    Birth</label>
+                    Entrez votre date de naissance</label>
                 <input type="date" name="dob" />
                 <input
                     type="submit"
