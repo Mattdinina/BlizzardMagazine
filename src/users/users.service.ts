@@ -1,4 +1,7 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { UserEntity } from './users.entity';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import * as mysql from 'mysql';
@@ -14,6 +17,12 @@ const connection = mysql.createConnection({
 
 @Injectable()
 export class UsersService {
+
+  constructor(
+    @InjectRepository(UserEntity)
+    private readonly userRepository: Repository<UserEntity>,
+  ) { }
+
   async create(createUserDto: CreateUserDto) {
     const { Pseudo, email, birthdate, password, ProfilePicture } = createUserDto;
     return new Promise((resolve, reject) => {
@@ -82,5 +91,9 @@ export class UsersService {
         }
       });
     });
+  }
+
+  async findUser(username: string): Promise<UserEntity | undefined> {
+    return this.userRepository.findOne({ where: { username } });
   }
 }
