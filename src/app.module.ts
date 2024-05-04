@@ -10,6 +10,7 @@ import { UsersService } from './users/users.service';
 import { PublicationsModule } from './publications/publications.module';
 import { CollectionModule } from './collection/collection.module';
 import { AuthModule } from './auth/auth.module';
+import { UserEntity } from './users/users.entity';
 require("dotenv").config();
 
 @Module({
@@ -21,7 +22,7 @@ require("dotenv").config();
       username: process.env.USERNAME,
       password: process.env.PASSWORD,
       database: process.env.DATABASE,
-      entities: [],
+      entities: [UserEntity],
       synchronize: true,
     }),
     UsersModule,
