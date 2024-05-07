@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert } from 'typeorm';
+import { hash } from 'bcrypt';
 
 enum UserRole {
     USER = 'user',
@@ -32,4 +33,9 @@ export class UserEntity {
         default: UserRole.USER,
     })
     role: UserRole;
+
+    @BeforeInsert()
+    async hashPassword() {
+        this.password = await hash(this.password, 10);
+    }
 }
