@@ -19,19 +19,6 @@ export type User = any;
 @Injectable()
 export class UsersService {
 
-  private readonly users = [
-    {
-      userId: 1,
-      username: 'john',
-      password: 'changeme',
-    },
-    {
-      userId: 2,
-      username: 'maria',
-      password: 'guess',
-    },
-  ];
-
   async create(createUserDto: CreateUserDto) {
     const { Pseudo, email, birthdate, password, ProfilePicture } = createUserDto;
     return new Promise((resolve, reject) => {
@@ -62,15 +49,34 @@ export class UsersService {
     });
   }
 
-  findOne(pseudo: string): Promise<any> {
+  async findOne(username: string): Promise<UserEntity | undefined> {
     return new Promise((resolve, reject) => {
-      connection.query('SELECT * FROM User WHERE pseudo = ?', [pseudo], (error, results, fields) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(results[0]);
+      connection.query(
+        'SELECT * FROM User WHERE Pseudo = ?',
+        [username],
+        (error, results, fields) => {
+          if (error) {
+            reject(error);
+          } else {
+            const user = results[0];
+            if (user) {
+              // Convertir les propriétés en minuscules
+              const formattedUser = {
+                id: user.id,
+                pseudo: user.Pseudo,
+                email: user.Email,
+                password: user.Password,
+                birthdate: user.Birthdate,
+                profilePicture: user.ProfilePicture,
+                role: user.role
+              };
+              resolve(formattedUser);
+            } else {
+              resolve(undefined);
+            }
+          }
         }
-      });
+      );
     });
   }
 
@@ -100,9 +106,5 @@ export class UsersService {
         }
       });
     });
-  }
-
-  async findUser(username: string): Promise<User | undefined> {
-    return this.users.find(user => user.username === username);
   }
 }

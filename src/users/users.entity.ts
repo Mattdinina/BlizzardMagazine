@@ -13,7 +13,7 @@ export class UserEntity {
     id: number;
 
     @Column({ unique: true })
-    username: string;
+    pseudo: string;
 
     @Column()
     password: string;
@@ -34,8 +34,9 @@ export class UserEntity {
     })
     role: UserRole;
 
-    @BeforeInsert()
-    async hashPassword() {
-        this.password = await hash(this.password, 10);
-    }
+    // La ligne suivante : utile si j'ai déjà la meme chose dans userDTO?
+    // @BeforeInsert()
+    // async hashPassword() {
+    //     this.password = await hash(this.password, 10);
+    // }
 }
