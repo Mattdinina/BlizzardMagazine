@@ -15,7 +15,7 @@ export class AuthService {
         pass: string,
     ): Promise<{ access_token: string }> {
         const user = await this.usersService.findOne(pseudo); // Utilisation de findOne au lieu de findUser
-        if (!user || pass != user.password) { // Vérification si l'utilisateur existe et si le mot de passe est correct
+        if (!user || !compareSync(pass, user.password)) { // Vérification si l'utilisateur existe et si le mot de passe est correct
             throw new UnauthorizedException();
         }
         const payload = { sub: user.id, pseudo: user.pseudo };

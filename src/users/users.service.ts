@@ -5,6 +5,7 @@ import { UserEntity } from './users.entity';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import * as mysql from 'mysql';
+import * as bcrypt from 'bcrypt';
 require("dotenv").config();
 
 const connection = mysql.createConnection({
@@ -21,8 +22,10 @@ export class UsersService {
 
   async create(createUserDto: CreateUserDto) {
     const { Pseudo, email, birthdate, password, ProfilePicture } = createUserDto;
+
+    const hash = await bcrypt.hash(password, 10);
     return new Promise((resolve, reject) => {
-      connection.query('INSERT INTO User (pseudo, email, birthdate, password, profilePicture) VALUES (?, ?, ?, ?, ?)', [Pseudo, email, birthdate, password, ProfilePicture], (error, results, fields) => {
+      connection.query('INSERT INTO User (pseudo, email, birthdate, password, profilePicture) VALUES (?, ?, ?, ?, ?)', [Pseudo, email, birthdate, hash, ProfilePicture], (error, results, fields) => {
         if (error) {
           reject(error);
         }

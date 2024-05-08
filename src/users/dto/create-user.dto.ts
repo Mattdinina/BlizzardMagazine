@@ -1,6 +1,6 @@
 import { IsEmail, IsNotEmpty, IsString, IsDateString, IsOptional } from 'class-validator';
 import { BeforeInsert } from 'typeorm'
-import { hash } from 'bcrypt';
+import * as bcrypt from 'bcrypt';
 export class CreateUserDto {
     @IsOptional()
     id: number;
@@ -20,6 +20,6 @@ export class CreateUserDto {
 
     @BeforeInsert()
     async hashPassword() {
-        this.password = await hash(this.password, 10);
+        this.password = await bcrypt.hash(this.password, 10);
     }
 }
