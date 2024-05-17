@@ -16,6 +16,18 @@ export class AuthController {
     constructor(private authService: AuthService) { }
 
     @HttpCode(HttpStatus.OK)
+    @Get('logout')
+    logout(@Request() req) {
+        // Vérifier si l'utilisateur est déjà déconnecté
+        if (!req.headers.authorization) {
+            return { message: 'Vous êtes déjà déconnecté' };
+        }
+        // Supprimer le jeton JWT des en-têtes de la demande
+        delete req.headers.authorization;
+        return { message: 'Déconnexion réussie' };
+    }
+
+    @HttpCode(HttpStatus.OK)
     @Post('login')
     signIn(@Body() signInDto: Record<string, any>) {
         return this.authService.signIn(signInDto.pseudo, signInDto.password);
