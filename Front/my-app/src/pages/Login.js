@@ -8,6 +8,10 @@ export default function Login() {
                 <input type="text" name="pseudo"></input>
                 <label> Entrer votre mot de passe</label>
                 <input type="text" name="password"></input>
+                <input
+                    type="submit"
+                    value="Se connecter"
+                />
             </form>
         </>
     )

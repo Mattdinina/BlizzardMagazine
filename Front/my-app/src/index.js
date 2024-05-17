@@ -6,6 +6,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Register from "./pages/register";
 import Login from "./pages/login";
+import Accueil from "./pages/accueil";
+import Artistes from "./pages/artistes";
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
         <Route path="/" element={<App />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
+        <Route path="accueil" element={<Accueil />} />
+        <Route path="artistes" element={<Artistes />} />
       </Routes>
     </BrowserRouter>
 

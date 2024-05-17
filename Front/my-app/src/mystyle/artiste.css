@@ -1,0 +1,187 @@
+/* Styles globaux */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    /* Assurez-vous que le fond de la page est noir */
+    color: #fff;
+    /* Texte blanc par défaut */
+}
+
+/* Conteneur des boutons de navigation */
+.button-container {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    background-color: #3c3c3c;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Styles des boutons de navigation */
+.button {
+    background-color: #6b6b6b;
+    color: #bfbfbf;
+    border: 1px solid #a23030;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+.button:hover {
+    background-color: #8c8c8c;
+}
+
+.button.active {
+    background-color: #a23030;
+    color: #fff;
+}
+
+/* Conteneur principal des cartes d'artistes */
+.artist-cards-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Changer align-items à flex-start pour aligner les images en haut */
+    margin-top: 60px;
+    /* Espace pour les boutons de navigation */
+    padding: 20px;
+}
+
+/* Carte d'artiste grande */
+.artist-card-large {
+    flex: 1;
+    margin-right: 20px;
+    max-width: 300px;
+    /* Taille maximale fixe pour la carte large */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Carte d'artiste petite */
+.artist-card-small-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 20px;
+    max-width: 300px;
+    /* Taille maximale fixe pour les cartes petites */
+}
+
+.artist-card-small {
+    flex: 1;
+}
+
+.artist-card-large img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.artist-card-small img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style du bouton "Voir Artistes" */
+.voir-artistes-button {
+    display: block;
+    background-color: #a23030;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    margin: 20px auto;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+.voir-artistes-button:hover {
+    background-color: #c24444;
+}
+
+/* Conteneur de texte */
+.text-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.Carriere,
+.Contenu,
+.description {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.Carriere {
+    color: var(--text-neutre-light-95, #F2F2F2);
+    font-family: "Clash Display";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.05px;
+}
+
+.Contenu {
+    color: var(--blanc-85, #726d6d);
+    font-family: "Clash Display";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    letter-spacing: 0.05px;
+}
+
+/* Style du bouton "Voir Conseils" */
+.voir-conseils-button {
+    background-color: #a23030;
+    /* Couleur de fond rouge */
+    width: 150px;
+    /* Réduire la largeur du bouton */
+    height: 100px;
+    /* Réduire la hauteur du bouton */
+    border: none;
+    color: #fff;
+    font-size: 0.8rem;
+    /* Réduire la taille de la police */
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    /* Aligne les enfants en colonne */
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.voir-conseils-button .button-icon {
+    width: 60px;
+    /* Réduire la taille de l'icône */
+    height: auto;
+    /* Espace entre l'icône et le texte */
+}
+
+.voir-conseils-button .button-text {
+    text-transform: uppercase;
+    /* Met le texte en majuscules */
+}
