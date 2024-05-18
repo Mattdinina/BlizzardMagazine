@@ -8,6 +8,8 @@ const artistData = [
 ];
 
 const voir_conseils = require('../images/voir_conseils.png'); // Le bon chemin pour l'image
+const voir_guide = require('../images/voir_guide.png'); // Le bon chemin pour l'image
+const musicien = require('../images/bento-placeholder.png')
 
 function Artistes() {
     return (
@@ -55,10 +57,25 @@ function Artistes() {
                         Que vous soyez un artiste en herbe, un mélomane ou un professionnel de l'industrie,<br /> Blizzard Magazine est votre
                         destination unique pour découvrir, partager et cultiver votre passion pour la musique.
                     </div>
-                    <button className="voir-conseils-button">
-                        <img src={voir_conseils} alt="Voir Conseils" className="button-icon" />
-                        <span className="button-text"></span>
-                    </button>
+                    <div className="deuxboutons">
+                        <button className="voir-conseils-button">
+                            <img src={voir_conseils} alt="Voir Conseils" className="button-icon" />
+                            <span className="button-text"></span>
+                        </button>
+                        <button className="voir-guide-button">
+                            <img src={voir_guide} alt="Voir Guide" className="button-icon" />
+                            <span className="button-text"></span>
+                        </button>
+                    </div>
+                    <div className="A_Propos">
+                        <div>
+                            <div>A propos</div> <br></br> <br></br>
+                            <div>-Une communauté vibrante d'artiste, <br></br> <br></br> de mélomanes et des passionnés par <br></br> <br></br>la musique locale du grand Lyon.</div>
+                        </div>
+                        <div>
+                            <img src={musicien}></img>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
