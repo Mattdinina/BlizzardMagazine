@@ -69,8 +69,8 @@ function Artistes() {
                     </div>
                     <div className="A_Propos">
                         <div>
-                            <div>A propos</div> <br></br> <br></br>
-                            <div>-Une communauté vibrante d'artiste, <br></br> <br></br> de mélomanes et des passionnés par <br></br> <br></br>la musique locale du grand Lyon.</div>
+                            <div className="AproposGras">A propos</div> <br></br> <br></br>
+                            <div className='TexteAPropos'>-Une communauté vibrante d'artiste, <br></br> <br></br> de mélomanes et des passionnés par <br></br> <br></br>la musique locale du grand Lyon.</div>
                         </div>
                         <div>
                             <img src={musicien}></img>

@@ -199,3 +199,12 @@ body {
     justify-content: center;
     margin-top: 4vh;
 }
+
+.AproposGras {
+    font-weight: bold;
+    font-size: xx-large
+}
+
+.TexteAPropos {
+    color: grey;
+}
