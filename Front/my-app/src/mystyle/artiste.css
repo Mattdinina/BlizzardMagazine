@@ -1,3 +1,4 @@
+/* Conteneur des boutons de navigation */
 /* Styles globaux */
 body {
     margin: 0;
@@ -9,18 +10,30 @@ body {
     /* Texte blanc par défaut */
 }
 
-/* Conteneur des boutons de navigation */
 .button-container {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    justify-content: center;
     background-color: #3c3c3c;
-    padding: 10px 0;
+    padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.auth {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 /* Styles des boutons de navigation */

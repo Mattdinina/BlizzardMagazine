@@ -13,9 +13,19 @@ function Artistes() {
     return (
         <div className="artistes-page">
             <div className="button-container">
-                <button className="button active">Artistes</button>
-                <button className="button">Genres</button>
-                <button className="button">Exclusifs</button>
+                <div className="nav-buttons">
+                    <button className="button active">Artistes</button>
+                    <button className="button">Genres</button>
+                    <button className="button">Exclusifs</button>
+                </div>
+                <div className='auth'>
+                    <a href='http://localhost:3000/login'>
+                        <button className="button">Login</button>
+                    </a>
+                    <a href="http://localhost:3000/register">
+                        <button className="button">Register</button>
+                    </a>
+                </div>
             </div>
             <div className="content">
                 <div className="artist-cards-wrapper">
