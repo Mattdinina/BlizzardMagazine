@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+import '../mystyle/accueil.css'; // Assurez-vous d'importer votre fichier CSS
 
 var Logo = require('../images/a.png');
-var menu = require('../images/cta-placeholder.png');
 var slogan = require('../images/HERO-section-card.png');
 
 function Accueil() {
@@ -14,14 +14,17 @@ function Accueil() {
 
     return (
         <>
-            <div style={{ backgroundColor: '#000', minWidth: '100vw', minHeight: '100vh' }}>
-                <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 20px', backgroundColor: '#696969', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', zIndex: 1000 }}>
-                    <img src={Logo} alt="Logo" style={{ height: '40px' }} />
-                    <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#fff' }}>LE MAGAZINE</span>
-                    <img src={menu} alt="Menu" style={{ height: '40px' }} />
+            <div className="accueil-page">
+                <div className="navbar">
+                    <img src={Logo} alt="Logo" className="logo" />
+                    <span className="magazine-title">LE MAGAZINE</span>
+                    <div className="auth-buttons">
+                        <a href="http://localhost:3000/login"><button>Login</button></a>
+                        <a href="http://localhost:3000/register"><button>Register</button></a>
+                    </div>
                 </div>
-                <div style={{ paddingTop: '60px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                    <img src={slogan} alt="Slogan" style={{ maxWidth: '100%', height: 'auto' }} onClick={routeChange} />
+                <div className="content">
+                    <img src={slogan} alt="Slogan" className="slogan" onClick={routeChange} />
                 </div>
             </div>
         </>
