@@ -58,7 +58,7 @@ body {
     justify-content: center;
     align-items: center;
     /* Changer align-items à flex-start pour aligner les images en haut */
-    margin-top: 200px;
+    margin-top: 49vh;
     /* Espace pour les boutons de navigation */
     padding: 20px;
 }
