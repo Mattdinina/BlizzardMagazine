@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Register from "./pages/register";
-import Login from "./pages/login";
+import Login from "./pages/Login";
 import Accueil from "./pages/accueil";
 import Artistes from "./pages/artistes";
 

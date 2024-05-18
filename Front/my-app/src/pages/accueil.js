@@ -1,11 +1,17 @@
 import React from 'react';
-
+import { useNavigate } from "react-router-dom";
 
 var Logo = require('../images/a.png');
 var menu = require('../images/cta-placeholder.png');
 var slogan = require('../images/HERO-section-card.png');
 
 function Accueil() {
+    let navigate = useNavigate();
+    const routeChange = () => {
+        let path = `/artistes`;
+        navigate(path);
+    }
+
     return (
         <>
             <div style={{ backgroundColor: '#000', minWidth: '100vw', minHeight: '100vh' }}>
@@ -15,7 +21,7 @@ function Accueil() {
                     <img src={menu} alt="Menu" style={{ height: '40px' }} />
                 </div>
                 <div style={{ paddingTop: '60px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                    <img src={slogan} alt="Slogan" style={{ maxWidth: '100%', height: 'auto' }} />
+                    <img src={slogan} alt="Slogan" style={{ maxWidth: '100%', height: 'auto' }} onClick={routeChange} />
                 </div>
             </div>
         </>
@@ -23,4 +29,3 @@ function Accueil() {
 }
 
 export default Accueil;
-
