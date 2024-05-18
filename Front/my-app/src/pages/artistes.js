@@ -13,10 +13,12 @@ function Artistes() {
     return (
         <div className="artistes-page">
             <div className="button-container">
-                <div className="nav-buttons">
-                    <button className="button active">Artistes</button>
-                    <button className="button">Genres</button>
-                    <button className="button">Exclusifs</button>
+                <div className="nav-center">
+                    <div className="nav-buttons">
+                        <button className="button active">Artistes</button>
+                        <button className="button">Genres</button>
+                        <button className="button">Exclusifs</button>
+                    </div>
                 </div>
                 <div className='auth'>
                     <a href='http://localhost:3000/login'>

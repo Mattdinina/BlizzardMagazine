@@ -10,6 +10,7 @@ body {
     /* Texte blanc par défaut */
 }
 
+/* Conteneur des boutons de navigation */
 .button-container {
     display: flex;
     justify-content: space-between;
@@ -24,15 +25,18 @@ body {
     z-index: 1000;
 }
 
-.nav-buttons {
+.nav-center {
     display: flex;
     justify-content: center;
-    flex-grow: 1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .auth {
     display: flex;
     justify-content: flex-end;
+    margin-left: auto;
     gap: 10px;
 }
 
