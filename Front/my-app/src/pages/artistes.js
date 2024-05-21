@@ -71,11 +71,18 @@ function Artistes() {
                         <div>
                             <div className="AproposGras">A propos</div> <br></br> <br></br>
                             <div className='TexteAPropos'>-Une communauté vibrante d'artiste, <br></br> <br></br> de mélomanes et des passionnés par <br></br> <br></br>la musique locale du grand Lyon.</div>
+                            <br></br>
+                            <div>Que vous soyez une artiste en herbe,<br></br>
+                                un mélomane, ou un professionnel de l'industrie, <br></br>
+                                Blizzard Magazine est votre destination unique <br></br>
+                                pour découvrir, partager et cultiver votre <br></br>
+                                passion pour la musique.</div>
                         </div>
                         <div>
                             <img src={musicien}></img>
                         </div>
                     </div>
+                    <button className="voir-artistes-button">VOIR ARTISTES</button>
                 </div>
             </div>
         </div>

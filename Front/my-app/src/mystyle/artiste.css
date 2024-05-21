@@ -67,8 +67,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 9vh;
-    padding: 20px;
+    margin-top: 1vh;
+    /* padding: 20px; */
 }
 
 .artist-card-large {
@@ -207,4 +207,19 @@ body {
 
 .TexteAPropos {
     color: grey;
+}
+
+.voir-artistes-button2 {
+    display: flex;
+    justify-content: center;
+    background-color: #a23030;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    margin: 20px auto;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
 }
