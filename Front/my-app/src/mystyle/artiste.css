@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -60,15 +60,18 @@ body {
 }
 
 .artistes-page .content {
-    margin-top: 50vh;
+    padding-top: 70px;
+    /* Ajustez cette valeur en fonction de la hauteur de votre navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .artist-cards-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1vh;
-    /* padding: 20px; */
+    margin-top: 20px;
 }
 
 .artist-card-large {
@@ -167,7 +170,6 @@ body {
     border-radius: 10px;
     cursor: pointer;
     outline: none;
-    margin: 0;
 }
 
 .voir-conseils-button:hover,
@@ -190,7 +192,6 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    /* Ajoute un espace entre les boutons */
 }
 
 .A_Propos {
@@ -202,7 +203,7 @@ body {
 
 .AproposGras {
     font-weight: bold;
-    font-size: xx-large
+    font-size: xx-large;
 }
 
 .TexteAPropos {
@@ -210,8 +211,7 @@ body {
 }
 
 .voir-artistes-button2 {
-    display: flex;
-    justify-content: center;
+    display: block;
     background-color: #a23030;
     color: #fff;
     border: none;
@@ -222,4 +222,24 @@ body {
     font-weight: bold;
     cursor: pointer;
     outline: none;
+    align-self: center;
+}
+
+.voir-artistes-button2:hover {
+    background-color: #c24444;
+}
+
+.photos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.team-photo {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

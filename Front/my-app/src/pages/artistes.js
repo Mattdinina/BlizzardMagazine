@@ -9,7 +9,13 @@ const artistData = [
 
 const voir_conseils = require('../images/voir_conseils.png'); // Le bon chemin pour l'image
 const voir_guide = require('../images/voir_guide.png'); // Le bon chemin pour l'image
-const musicien = require('../images/bento-placeholder.png')
+const musicien = require('../images/bento-placeholder.png');
+
+const marjo = require('../images/Marjo.png');
+const matthias = require('../images/Matthias.png');
+const landry = require('../images/Landry.png');
+const evan = require('../images/Evan.png');
+const tamir = require('../images/tamir.png');
 
 function Artistes() {
     return (
@@ -79,10 +85,20 @@ function Artistes() {
                                 passion pour la musique.</div>
                         </div>
                         <div>
-                            <img src={musicien}></img>
+                            <img src={musicien} alt="Musicien"></img>
                         </div>
                     </div>
                     <button className="voir-artistes-button">VOIR ARTISTES</button>
+                    <div className="Equipe">
+                        <div>L'équipe BMAG</div>
+                        <div className='photos'>
+                            <img src={marjo} alt="Marjorie" className="team-photo"></img>
+                            <img src={landry} alt="Landry" className="team-photo"></img>
+                            <img src={evan} alt="Evan" className="team-photo"></img>
+                            <img src={matthias} alt="Matthias" className="team-photo"></img>
+                            <img src={tamir} alt="Tamir" className="team-photo"></img>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
