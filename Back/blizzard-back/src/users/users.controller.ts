@@ -1,9 +1,8 @@
-// controllers/users.controller.ts
-
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Request, UseGuards } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { AuthGuard } from 'src/auth/auth.guard';
 
 @Controller('users')
 export class UsersController {
@@ -34,22 +33,26 @@ export class UsersController {
     }
   }
 
-  @Patch(':id')
+  @Patch('update/:id')
   async update(@Param('id') id: number, @Body() updateUserDto: UpdateUserDto) {
     try {
-      // Extraire la première clé et la première valeur du DTO
       const columnName = Object.keys(updateUserDto)[0];
       const columnValue = updateUserDto[columnName];
-
-      // Appel du service pour mettre à jour
       return await this.usersService.update(id, columnName, columnValue);
     } catch (error) {
-      return { error: error.message }; // Ou autre gestion des erreurs
+      return { error: error.message };
     }
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.usersService.remove(+id);
+  }
+
+  @UseGuards(AuthGuard)
+  @Patch('modify-password')
+  async modifyPassword(@Body('password') password: string, @Request() req) {
+    const pseudo = req.user.pseudo;
+    return this.usersService.changePassword(pseudo, password);
   }
 }

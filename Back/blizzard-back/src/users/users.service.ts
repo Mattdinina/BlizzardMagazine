@@ -110,4 +110,22 @@ export class UsersService {
       });
     });
   }
+  async changePassword(pseudo: string, newPassword: string) {
+    const saltOrRounds = 10;
+    const hashedPassword = await bcrypt.hash(newPassword, saltOrRounds);
+
+    return new Promise((resolve, reject) => {
+      connection.query(
+        'UPDATE User SET password = ? WHERE Pseudo = ?',
+        [hashedPassword, pseudo],
+        (error, results) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(results);
+          }
+        }
+      );
+    });
+  }
 }
