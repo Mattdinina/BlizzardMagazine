@@ -8,6 +8,7 @@ import Register from "./pages/register";
 import Login from "./pages/Login";
 import Accueil from "./pages/accueil";
 import Artistes from "./pages/artistes";
+import Profil from "./pages/Profil";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Route path="login" element={<Login />} />
         <Route path="accueil" element={<Accueil />} />
         <Route path="artistes" element={<Artistes />} />
+        <Route path="profil" element={<Profil />} />
       </Routes>
     </BrowserRouter>
 
