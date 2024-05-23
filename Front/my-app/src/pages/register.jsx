@@ -5,7 +5,7 @@ function Register() {
     return (
         <form action="http://localhost:8080/users" method="POST">
             <fieldset>
-                <legend>Inscription</legend>
+                <legend>Inscription compte Particulier</legend>
                 <label>Entrez votre pseudo</label>
                 <input type="text" name="Pseudo" />
                 <label>Entrez votre email</label>

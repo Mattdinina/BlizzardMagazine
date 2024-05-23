@@ -9,6 +9,8 @@ import Login from "./pages/Login";
 import Accueil from "./pages/accueil";
 import Artistes from "./pages/artistes";
 import Profil from "./pages/Profil";
+import Signup from "./pages/Signup";
+import SignupProfessionnel from "./pages/SignupProfessionnel";
 
 export default function Home() {
   return (
@@ -20,6 +22,8 @@ export default function Home() {
         <Route path="accueil" element={<Accueil />} />
         <Route path="artistes" element={<Artistes />} />
         <Route path="profil" element={<Profil />} />
+        <Route path="signup" element={<Signup />} />
+        <Route path="signup_pro" element={<SignupProfessionnel />} />
       </Routes>
     </BrowserRouter>
 

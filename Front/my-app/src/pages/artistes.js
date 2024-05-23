@@ -1,5 +1,5 @@
 import React from 'react';
-import '../mystyle/artiste.css'; // Assurez-vous d'importer votre fichier CSS
+import '../mystyle/artiste.css';
 
 const artistData = [
     { name: "Damso", image: require('../images/UI-frame-black-end1.png') },

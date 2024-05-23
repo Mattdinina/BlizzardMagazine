@@ -1,0 +1,67 @@
+.haut-de-page {
+    background: url('../images/Frame89.png') no-repeat center center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.haut-de-page h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.haut-de-page p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    background-color: black;
+    /* Ajustez cette couleur selon vos besoins */
+}
+
+.account-type-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.particulier-button,
+.professionnel-button {
+    width: 300px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.particulier-button .icon,
+.professionnel-button .icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.professionnel-button {
+    background-color: gray;
+}
+
+.particulier-button small,
+.professionnel-button small {
+    font-size: 0.8rem;
+}

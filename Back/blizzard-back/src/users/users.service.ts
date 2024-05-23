@@ -37,6 +37,24 @@ export class UsersService {
     })
   }
 
+  async createAdvertiser(createUserDto: CreateUserDto) {
+    const { Pseudo, email, birthdate, password, ProfilePicture } = createUserDto;
+
+    const hash = await bcrypt.hash(password, 10);
+    return new Promise((resolve, reject) => {
+      let advertiserRole = 'advertiser'
+      connection.query(`INSERT INTO User (pseudo, email, birthdate, password, profilePicture, role) VALUES (?, ?, ?, ?, ?, ?)`, [Pseudo, email, birthdate, hash, ProfilePicture, advertiserRole], (error, results, fields) => {
+        if (error) {
+          reject(error);
+        }
+        else {
+          resolve(results);
+        }
+      });
+
+    })
+  }
+
 
 
   findAll() {

@@ -13,6 +13,11 @@ export class UsersController {
     return await this.usersService.create(createUserDto);
   }
 
+  @Post("/advertiser")
+  async createAdvertiser(@Body() createUserDto: CreateUserDto) {
+    return await this.usersService.createAdvertiser(createUserDto)
+  }
+
   @Get()
   async findAll() {
     try {
