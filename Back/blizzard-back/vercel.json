@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
         {
-            "src": "index.js",
-            "use": "@now/node"
+            "src": "src/main.ts",
+            "use": "@vercel/node"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "index.html",
+            "dest": "src/main.ts",
             "methods": [
                 "GET",
                 "POST",
