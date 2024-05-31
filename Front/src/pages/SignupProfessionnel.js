@@ -9,7 +9,7 @@ export default function SignupProfessionnel() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8080/users/advertiser', {
+            const response = await fetch('http://164.92.244.79:8080/users/advertiser', {
                 method: 'POST', // Corrigé la méthode
                 headers: {
                     'Content-Type': 'application/json',

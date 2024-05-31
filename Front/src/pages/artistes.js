@@ -29,10 +29,10 @@ function Artistes() {
                     </div>
                 </div>
                 <div className='auth'>
-                    <a href='http://localhost:3000/login'>
+                    <a href='https://blizzard-magazine.vercel.app/login'>
                         <button className="button">Login</button>
                     </a>
-                    <a href="http://localhost:3000/register">
+                    <a href="https://blizzard-magazine.vercel.app/register">
                         <button className="button">Register</button>
                     </a>
                 </div>

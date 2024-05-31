@@ -10,7 +10,7 @@ export default function Profil() {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('http://localhost:8080/users/modify-password', {
+            const response = await fetch('http://164.92.244.79:8080/users/modify-password', {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ export default function Profil() {
     async function logout() {
         try {
             const token = localStorage.getItem("token")
-            const response = await fetch('http://localhost:8080/auth/logout', {
+            const response = await fetch('http://164.92.244.79:8080/auth/logout', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

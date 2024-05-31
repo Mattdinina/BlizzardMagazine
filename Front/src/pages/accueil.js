@@ -19,8 +19,8 @@ function Accueil() {
                     <img src={Logo} alt="Logo" className="logo" />
                     <span className="magazine-title">LE MAGAZINE</span>
                     <div className="auth-buttons">
-                        <a href="http://localhost:3000/login"><button>Login</button></a>
-                        <a href="http://localhost:3000/register"><button>Register</button></a>
+                        <a href="https://blizzard-magazine.vercel.app/login"><button>Login</button></a>
+                        <a href="https://blizzard-magazine.vercel.app/register"><button>Register</button></a>
                     </div>
                 </div>
                 <div className="content">
