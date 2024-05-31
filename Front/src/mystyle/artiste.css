@@ -60,7 +60,7 @@ body {
 }
 
 .artistes-page .content {
-    padding-top: 70px;
+    padding-top: 100px;
     /* Ajustez cette valeur en fonction de la hauteur de votre navbar */
     display: flex;
     flex-direction: column;
@@ -71,7 +71,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 80vh;
 }
 
 .artist-card-large {
@@ -93,11 +93,14 @@ body {
 
 .artist-card-small {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .artist-card-large img,
 .artist-card-small img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
     border-radius: 10px;
