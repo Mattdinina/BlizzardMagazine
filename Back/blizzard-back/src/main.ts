@@ -6,7 +6,7 @@ async function bootstrap() {
 
   // Configuration de CORS
   app.enableCors({
-    origin: 'http://localhost:3000',
+    origin: 'https://blizzard-magazine-6niql4s1m-matthias-projects-66d691bb.vercel.app/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: 'Content-Type,Authorization',
     credentials: true,
