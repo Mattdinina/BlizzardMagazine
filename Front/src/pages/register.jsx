@@ -3,7 +3,7 @@ import React from 'react';
 
 function Register() {
     return (
-        <form action="http://localhost:8080/users" method="POST">
+        <form action="http://164.92.244.79:8080/users" method="POST">
             <fieldset>
                 <legend>Inscription compte Particulier</legend>
                 <label>Entrez votre pseudo</label>

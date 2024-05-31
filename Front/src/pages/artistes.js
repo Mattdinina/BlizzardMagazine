@@ -13,7 +13,7 @@ const musicien = require('../images/bento-placeholder.png');
 
 const marjo = require('../images/Marjo.png');
 const matthias = require('../images/Matthias.png');
-const landry = require('../images/Landry.png');
+const landry = require('../images/Landry2.png');
 const evan = require('../images/Evan.png');
 const tamir = require('../images/tamir.png');
 
